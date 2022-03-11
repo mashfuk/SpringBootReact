@@ -26,6 +26,8 @@ import NotFound from './components/NotFound';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AddEmployee from './components/AddEmployee';
 
+import UploadFiles from "./components/upload-files.component";
+
 
 class App extends Component {
   constructor(props) {
@@ -132,6 +134,14 @@ class App extends Component {
             </li>
             )}
 
+            {showAdminBoard && (
+            <li className="nav-item">
+              <Link to={"/upload"} className="nav-link">
+                Upload Files
+              </Link>
+            </li>
+            )}
+
   
 
           </div>
@@ -181,6 +191,8 @@ class App extends Component {
             <Route exact path="/tutorials" component={TutorialsList} />
             <Route exact path="/add" component={AddTutorial} />
             <Route exact path="/tutorials/:id" component={Tutorial} />
+
+            <Route exact path="/upload" component={UploadFiles} />
 
             <Route exact path="/employees" component={EmployeeList} />
             <Route path="/addemployee" component={AddEmployee} />
