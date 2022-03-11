@@ -3,12 +3,13 @@ package com.bezkoder.springjwt.controllers;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,6 +30,10 @@ import com.bezkoder.springjwt.service.FilesStorageService;
 @RequestMapping("/api/v1")
 @CrossOrigin("*")
 public class FilesController {
+	
+	
+  private static final Logger logger = LoggerFactory.getLogger(FilesController.class);
+
 
   @Autowired
   FilesStorageService storageService;
@@ -38,6 +43,8 @@ public class FilesController {
     String message = "";
     try {
       storageService.save(file);
+      
+      logger.info("file saved");
 
       message = "Uploaded the file successfully: " + file.getOriginalFilename();
       return ResponseEntity.status(HttpStatus.OK).body(new ResponseMessage(message));
