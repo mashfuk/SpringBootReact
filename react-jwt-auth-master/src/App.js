@@ -12,7 +12,7 @@ import BoardAdmin from "./components/board-admin.component";
 
 
 import AddTutorial from "./components/add-tutorial.component";
-import Tutorial from "./components/tutorials-list.component";
+import Tutorial from "./components/tutorial.component";
 import TutorialsList from "./components/tutorials-list.component";
 
 import AuthService from "./services/auth.service";
@@ -27,6 +27,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import AddEmployee from './components/AddEmployee';
 
 import UploadFiles from "./components/upload-files.component";
+
+import UserPagination from './components/UserPagination';
 
 
 class App extends Component {
@@ -142,6 +144,14 @@ class App extends Component {
             </li>
             )}
 
+            {showAdminBoard && (
+            <li className="nav-item">
+              <Link to={"/pagination"} className="nav-link">
+                User pagination
+              </Link>
+            </li>
+            )}
+
   
 
           </div>
@@ -193,6 +203,7 @@ class App extends Component {
             <Route exact path="/tutorials/:id" component={Tutorial} />
 
             <Route exact path="/upload" component={UploadFiles} />
+            <Route exact path="/pagination" component={UserPagination} />
 
             <Route exact path="/employees" component={EmployeeList} />
             <Route path="/addemployee" component={AddEmployee} />
