@@ -28,7 +28,7 @@ import AddEmployee from './components/AddEmployee';
 
 import UploadFiles from "./components/upload-files.component";
 
-import PostPagination from './components/PostPagination';
+import UserPagination from './components/UserPagination';
 
 
 class App extends Component {
@@ -147,7 +147,7 @@ class App extends Component {
             {showAdminBoard && (
             <li className="nav-item">
               <Link to={"/pagination"} className="nav-link">
-                Post pagination
+                User pagination
               </Link>
             </li>
             )}
@@ -203,7 +203,7 @@ class App extends Component {
             <Route exact path="/tutorials/:id" component={Tutorial} />
 
             <Route exact path="/upload" component={UploadFiles} />
-            <Route exact path="/pagination" component={PostPagination} />
+            <Route exact path="/pagination" component={UserPagination} />
 
             <Route exact path="/employees" component={EmployeeList} />
             <Route path="/addemployee" component={AddEmployee} />
