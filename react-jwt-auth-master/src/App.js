@@ -12,7 +12,7 @@ import BoardAdmin from "./components/board-admin.component";
 
 
 import AddTutorial from "./components/add-tutorial.component";
-import Tutorial from "./components/tutorials-list.component";
+import Tutorial from "./components/tutorial.component";
 import TutorialsList from "./components/tutorials-list.component";
 
 import AuthService from "./services/auth.service";
