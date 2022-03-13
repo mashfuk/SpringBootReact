@@ -27,8 +27,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import AddEmployee from './components/AddEmployee';
 
 import UploadFiles from "./components/upload-files.component";
-
 import UserPagination from './components/UserPagination';
+import DropDown from './components/DropDown';
 
 
 class App extends Component {
@@ -152,6 +152,14 @@ class App extends Component {
             </li>
             )}
 
+            {showAdminBoard && (
+            <li className="nav-item">
+              <Link to={"/dropdown"} className="nav-link">
+                Drop Down
+              </Link>
+            </li>
+            )}
+
   
 
           </div>
@@ -204,6 +212,7 @@ class App extends Component {
 
             <Route exact path="/upload" component={UploadFiles} />
             <Route exact path="/pagination" component={UserPagination} />
+            <Route exact path="/dropdown" component={DropDown} />
 
             <Route exact path="/employees" component={EmployeeList} />
             <Route path="/addemployee" component={AddEmployee} />
