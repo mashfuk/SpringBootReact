@@ -13,7 +13,6 @@ public class TestController {
   
   @GetMapping("/all")
   public String allAccess() {
-	System.out.print("Hi");
     return "Public Content.";
   }
 

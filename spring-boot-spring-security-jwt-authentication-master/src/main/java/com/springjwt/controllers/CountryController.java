@@ -26,6 +26,7 @@ public class CountryController {
 
     @GetMapping(value = "/all")
     public Iterable<Country> getAllCountries() {
+    	System.out.println("hi");
         return countryService.getCountries();
     }
 }
